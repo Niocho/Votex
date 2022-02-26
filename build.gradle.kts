@@ -3,8 +3,8 @@ plugins {
     kotlin("jvm") version "1.6.10"
 }
 
-val group = "com.niocho.www"
-val version = "0.0.1"
+project.group = "com.niocho.www"
+project.version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -41,6 +41,7 @@ tasks.withType(JavaCompile::class).configureEach {
 tasks.withType(ProcessResources::class) {
     val props = mapOf("version" to version)
     inputs.properties(props)
+    filteringCharset = "UTF-8"
     filesMatching("plugin.yml") {
         expand(props)
     }
