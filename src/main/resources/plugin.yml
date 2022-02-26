@@ -1,0 +1,7 @@
+name: Votex
+version: '${version}'
+main: com.niocho.www.votex.Votex
+prefix: Votex
+authors: [ Niocho ]
+description: Votex is a sound management plugin.
+website: https://www.github.com/Niocho
