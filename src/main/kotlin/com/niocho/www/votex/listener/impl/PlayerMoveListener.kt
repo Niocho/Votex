@@ -1,4 +1,4 @@
-package com.niocho.www.votex.listener
+package com.niocho.www.votex.listener.impl
 
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
