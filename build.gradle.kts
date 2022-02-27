@@ -32,6 +32,17 @@ java {
     }
 }
 
+tasks.withType(Jar::class) {
+    manifest {
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(configurations.runtimeClasspath.get().map {
+        if (it.isDirectory) it else zipTree(it).matching {
+            exclude("module-info.class")
+        }
+    })
+}
+
 tasks.withType(JavaCompile::class).configureEach {
     if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible) {
         options.release.set(targetJavaVersion)

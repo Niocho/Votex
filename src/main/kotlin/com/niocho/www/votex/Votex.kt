@@ -19,11 +19,10 @@ class Votex: JavaPlugin() {
     }
 
     override fun onEnable() {
-        server.consoleSender.sendMessage(ChatColor.DARK_GREEN.toString() + "Votex sound management plugin is initiating")
+        server.consoleSender.sendMessage("${ChatColor.DARK_GREEN}Votex sound management plugin is initiating")
         saveDefaultConfig()
-        server.consoleSender.sendMessage(ChatColor.GREEN.toString() + "Votex sound management plugin is initiating")
-
         ListenerModule.onEnable()
+        server.consoleSender.sendMessage("${ChatColor.GREEN}Votex sound management plugin is initiated")
     }
 
     override fun onDisable() {
